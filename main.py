@@ -1,9 +1,12 @@
-from models.movimentacao import Movimentacao
-
 from movimentacoes import (
-    salvar_movimentacao,
+    adicionar_movimentacao,
     mostrar_movimentacoes,
-    mostrar_saldo
+    mostrar_saldo,
+    exportar_movimentacoes,
+    editar_movimentacao,
+    excluir_movimentacao,
+    filtrar_movimentacoes,
+    ordenar_movimentacoes
 )
 
 while True:
@@ -12,44 +15,18 @@ while True:
     print("\n1 - Adicionar movimentação")
     print("2 - Listar movimentações")
     print("3 - Mostrar saldo")
-    print("4 - Sair")
+    print("4 - Editar movimentação")
+    print("5 - Excluir movimentação")
+    print("6 - Filtrar movimentações")
+    print("7 - Ordenar movimentações")
+    print("8 - Exportar movimentações")
+    print("9 - Sair")
 
     opcao = input("\nEscolha uma opção: ")
 
     if opcao == "1":
 
-        tipo = input(
-            "\nTipo (Receita/Despesa): "
-        )
-
-        valor = float(
-            input(
-                "\nValor: "
-            )
-        )
-
-        categoria = input(
-            "\nCategoria: "
-        )
-
-        descricao = input(
-            "\nDescrição: "
-        )
-
-        movimentacao = Movimentacao(
-            tipo,
-            valor,
-            categoria,
-            descricao
-        )
-
-        salvar_movimentacao(
-            movimentacao
-        )
-
-        print(
-            "\n✅ Movimentação adicionada."
-        )
+        adicionar_movimentacao()
 
     elif opcao == "2":
 
@@ -60,6 +37,26 @@ while True:
         mostrar_saldo()
     
     elif opcao == "4":
+
+        editar_movimentacao()
+
+    elif opcao == "5":
+
+        excluir_movimentacao()
+
+    elif opcao == "6":
+
+        filtrar_movimentacoes()
+
+    elif opcao == "7":
+
+        ordenar_movimentacoes()
+
+    elif opcao == "8":
+
+        exportar_movimentacoes()
+
+    elif opcao == "9":
 
         print(
             "\nEncerrando programa..."

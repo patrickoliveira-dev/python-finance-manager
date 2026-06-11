@@ -6,3 +6,4 @@ venv/
 
 .vscode/settings.json
 dados/movimentacoes.json
+relatorio_financeiro.txt

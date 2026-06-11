@@ -24,11 +24,11 @@ class Movimentacao:
 
     def exibir(self):
 
-        print(f"\n Tipo: {self.tipo}")
-        print(f" Valor: {self.valor}")
-        print(f" Categoria: {self.categoria}")
-        print(f" Descrição: {self.descricao}")
-        print(f" Gerada em: {self.data}")
+        print(f"\n📥 Tipo: {self.tipo}")
+        print(f"💵 Valor: R$ {self.valor:.2f}")
+        print(f"🏷️ Categoria: {self.categoria}")
+        print(f"📝 Descrição: {self.descricao}")
+        print(f"🕒 Gerada em: {self.data}")
     
     def to_dict(self):
 

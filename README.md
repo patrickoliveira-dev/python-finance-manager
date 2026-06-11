@@ -2,27 +2,84 @@
 
 A command-line personal finance management application developed in Python.
 
-This project was created as a practical study of software development fundamentals, including Object-Oriented Programming (OOP), data persistence, modular architecture, financial calculations, and JSON manipulation.
+This project was created as a practical study of software development fundamentals, including Object-Oriented Programming (OOP), data persistence, modular architecture, data filtering, sorting, reporting, and JSON manipulation.
 
 ## Features
 
-* Register financial transactions
-* Income and expense tracking
+### Financial Records
+
+* Add financial transactions
+* Edit transactions
+* Delete transactions
 * Automatic date and time registration
-* Display transaction history
-* Calculate total income
-* Calculate total expenses
-* Calculate current balance
-* Persistent storage using JSON
-* Object-Oriented design
-* Modular project structure
+* Income and expense tracking
+* Categorized transactions
+
+### Categories
+
+#### Income Categories
+
+* Salary
+* Freelance
+* Investments
+* Others
+
+#### Expense Categories
+
+* Food
+* Transportation
+* Housing
+* Health
+* Leisure
+* Internet
+* Education
+* Others
+
+### Analysis and Organization
+
+* List all transactions
+* Filter by:
+
+  * All transactions
+  * Income
+  * Expenses
+  * Category
+* Sort by:
+
+  * Value
+  * Date
+  * Category
+* Balance calculation
+* Income summary
+* Expense summary
+
+### Reports
+
+* Export complete financial report to a text file
+* Report includes:
+
+  * Total income
+  * Total expenses
+  * Current balance
+  * Detailed transaction history
+
+### Technical Features
+
+* JSON persistence
+* Object-Oriented Programming (OOP)
+* Modular architecture
+* Input validation
 * Error handling for corrupted JSON files
+
+---
 
 ## Technologies
 
 * Python 3
 * JSON
 * Object-Oriented Programming (OOP)
+
+---
 
 ## Project Structure
 
@@ -32,15 +89,17 @@ finance_manager/
 ├── main.py
 ├── movimentacoes.py
 │
-├── models/
-│   └── movimentacao.py
-│
 ├── dados/
 │   └── movimentacoes.json
+│
+├── models/
+│   └── movimentacao.py
 │
 ├── README.md
 └── .gitignore
 ```
+
+---
 
 ## How to Run
 
@@ -62,6 +121,8 @@ Run the application:
 python main.py
 ```
 
+---
+
 ## Learning Objectives
 
 This project was built to practice:
@@ -73,34 +134,27 @@ This project was built to practice:
 * File handling
 * Error handling
 * Modularization
-* Financial data modeling
+* Data filtering
+* Data sorting
+* Report generation
 * Git and GitHub workflow
 
-## Current Features
-
-The application currently supports:
-
-* Adding financial transactions
-* Listing transactions
-* Viewing account balance
-* Categorizing transactions
-* Tracking income and expenses
-* Persistent JSON storage
+---
 
 ## Future Improvements
 
-* Edit transactions
-* Delete transactions
-* Transaction filtering
-* Transaction sorting
-* Financial statistics
+* Financial statistics dashboard
 * Monthly reports
-* Export reports to TXT
-* CSV export
+* Recurring transactions
 * Budget management
-* Category summaries
-* Graphical user interface (GUI)
+* Savings goals
+* Transaction IDs
+* CSV export
+* Graph generation
 * Database integration
+* Graphical user interface (GUI)
+
+---
 
 ## Author
 
