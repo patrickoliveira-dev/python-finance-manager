@@ -7,7 +7,8 @@ from movimentacoes import (
     excluir_movimentacao,
     filtrar_movimentacoes,
     ordenar_movimentacoes,
-    mostrar_estatisticas
+    mostrar_estatisticas,
+    mostrar_dashboard
 )
 
 while True:
@@ -22,7 +23,8 @@ while True:
     print("7 - Ordenar movimentações")
     print("8 - Exportar movimentações")
     print("9 - Estatísticas")
-    print("10 - Sair")
+    print("10 - Dashboard")
+    print("11 - Sair")
 
     opcao = input("\nEscolha uma opção: ")
 
@@ -63,6 +65,10 @@ while True:
         mostrar_estatisticas()
 
     elif opcao == "10":
+
+        mostrar_dashboard()
+
+    elif opcao == "11":
 
         print(
             "\nEncerrando programa..."

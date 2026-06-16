@@ -12,13 +12,23 @@ CATEGORIAS_RECEITA = [
 ]
 
 CATEGORIAS_DESPESA = [
-    "Alimentação",
-    "Transporte",
     "Moradia",
+    "Contas",
+    "Transporte",
+    "Alimentação",
     "Saúde",
     "Lazer",
-    "Internet",
     "Educação",
+    "Internet",
+    "Telefonia",
+    "Compras",
+    "Pets",
+    "Assinaturas",
+    "Vestuário",
+    "Presentes",
+    "Impostos e Taxas",
+    "Manutenção",
+    "Investimentos",
     "Outros"
 ]
 
@@ -43,11 +53,11 @@ def adicionar_movimentacao():
 
         try:
 
-            novo_valor = float(
+            valor = float(
                 input("\nValor: ")
             )
 
-            if novo_valor <= 0:
+            if valor <= 0:
 
                 print(
                     "\n❌ O valor deve ser maior que zero."
@@ -831,3 +841,57 @@ def gerar_id():
     )
 
     return maior_id + 1
+
+def mostrar_dashboard():
+
+    movimentacoes = obter_movimentacoes()
+
+    if movimentacoes is None:
+        return
+    
+    gastos_por_categoria = {}
+
+    for movimentacao in movimentacoes:
+
+        if movimentacao["tipo"] == "Despesa":
+
+            categoria = movimentacao["categoria"]
+
+            if categoria not in gastos_por_categoria:
+
+                gastos_por_categoria[categoria] = 0
+
+            gastos_por_categoria[categoria] += (
+                movimentacao["valor"]
+            )
+
+    total_despesas = sum(
+        gastos_por_categoria.values()
+    )
+
+    print("\n=== DASHBOARD FINANCEIRO ===\n")
+
+    categorias_ordenadas = sorted(
+        gastos_por_categoria.items(),
+        key=lambda item: item[1],
+        reverse=True
+    )
+
+    for categoria, valor in categorias_ordenadas:
+
+        percentual = (
+            valor / total_despesas
+        ) * 100
+
+        barra = "█" * int(percentual / 5)
+
+        print(
+            f"{categoria:<15} "
+            f"{barra:<20} "
+            f"{percentual:.1f}%"
+        )
+    
+    print(
+        f"\n💸 Total de despesas: "
+        f"R$ {total_despesas:.2f}"
+    )
