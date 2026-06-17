@@ -9,13 +9,18 @@ class Movimentacao:
         valor,
         categoria,
         descricao,
-        data=None
+        data=None,
+        recorrente=False,
+        frequencia=None
     ):
         self.id = id
         self.tipo = tipo
         self.valor = valor
         self.categoria = categoria
         self.descricao = descricao
+
+        self.recorrente = recorrente
+        self.frequencia = frequencia
         
         self.data = (
             data
@@ -31,8 +36,22 @@ class Movimentacao:
         print(f"💵 Valor: R$ {self.valor:.2f}")
         print(f"🏷️ Categoria: {self.categoria}")
         print(f"📝 Descrição: {self.descricao}")
+
+        if self.recorrente:
+
+            print(
+                f"🔁 Recorrente: Sim "
+                f"({self.frequencia})"
+            )
+
+        else:
+
+            print(
+                "🔁 Recorrente: Não"
+            )
+
         print(f"🕒 Gerada em: {self.data}")
-    
+
     def to_dict(self):
 
         return {
@@ -41,7 +60,9 @@ class Movimentacao:
             "valor": self.valor,
             "categoria": self.categoria,
             "descricao": self.descricao,
-            "data": self.data
+            "data": self.data,
+            "recorrente": self.recorrente,
+            "frequencia": self.frequencia
         }
     
     @classmethod
@@ -53,7 +74,9 @@ class Movimentacao:
             dados["valor"],
             dados["categoria"],
             dados["descricao"],
-            dados["data"]
+            dados["data"],
+            dados.get("recorrente", False),
+            dados.get("frequencia")
         )
 
         return movimentacao
