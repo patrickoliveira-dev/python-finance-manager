@@ -13,7 +13,7 @@ from movimentacoes import (
 )
 from ordenacao import ordenar_movimentacoes
 from recorrencias import (
-    listar_recorrencias,
+    menu_recorrencias,
     mostrar_proximas_ocorrencias
 )
 
@@ -21,8 +21,8 @@ def executar_menu():
 
     while True:
 
-        print("\n=== FINANCE MANAGER ===")
-        print("\n1 - Adicionar movimentação")
+        print("\n=== FINANCE MANAGER ===\n")
+        print("1 - Adicionar movimentação")
         print("2 - Listar movimentações")
         print("3 - Mostrar saldo")
         print("4 - Editar movimentação")
@@ -32,8 +32,8 @@ def executar_menu():
         print("8 - Exportar movimentações")
         print("9 - Estatísticas")
         print("10 - Dashboard")
-        print("11 - Listar recorrências")
-        print("12 - Mostrar próximas ocorrências")
+        print("11 - Gerenciar recorrências")
+        print("12 - Próximas ocorrências")
         print("13 - Sair")
 
         opcao = input("\nEscolha uma opção: ")
@@ -80,7 +80,7 @@ def executar_menu():
 
         elif opcao == "11":
 
-            listar_recorrencias()
+            menu_recorrencias()
 
         elif opcao == "12":
 

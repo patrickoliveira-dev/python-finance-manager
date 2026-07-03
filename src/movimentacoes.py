@@ -263,7 +263,7 @@ def escolher_categoria(tipo):
 
         categorias = CATEGORIAS_DESPESA
 
-    print("\n=== CATEGORIAS ===")
+    print("\n=== CATEGORIAS ===\n")
 
     for indice, categoria in enumerate(
         categorias,
@@ -303,7 +303,7 @@ def escolher_categoria(tipo):
 
 def escolher_frequencia():
 
-    print("\n=== FREQUÊNCIA ===")
+    print("\n=== FREQUÊNCIA ===\n")
 
     for indice, frequencia in enumerate(
         FREQUENCIAS,
@@ -342,7 +342,7 @@ def escolher_frequencia():
 
 def escolher_movimentacao(movimentacoes):
 
-    listar_movimentacoes_resumidas(movimentacoes)
+    mostrar_lista_movimentacoes(movimentacoes)
 
     try:
 
@@ -367,22 +367,6 @@ def escolher_movimentacao(movimentacoes):
     
     return numero - 1
 
-def listar_movimentacoes_resumidas(movimentacoes):
-    
-    print("\n=== MOVIMENTAÇÕES ===\n")
-    
-    for indice, movimentacao in enumerate(
-        movimentacoes,
-        start=1
-    ):
-
-        print(
-            f"{indice} - "
-            f"ID {movimentacao['id']} | "
-            f"{movimentacao['categoria']} | "
-            f"R$ {movimentacao['valor']:.2f}"
-        )
-
 def gerar_id():
 
     movimentacoes = carregar_movimentacoes()
@@ -396,3 +380,24 @@ def gerar_id():
     )
 
     return maior_id + 1
+
+def mostrar_lista_movimentacoes(movimentacoes):
+
+    if not movimentacoes:
+
+        print("\nNenhuma movimentação encontrada.")
+        return
+
+    print("\n=== MOVIMENTAÇÕES ===\n")
+
+    for indice, movimentacao in enumerate(
+        movimentacoes,
+        start=1
+    ):
+
+        print(
+            f"{indice} - "
+            f"ID {movimentacao['id']} | "
+            f"{movimentacao['categoria']} | "
+            f"R$ {movimentacao['valor']:.2f}"
+        )
